@@ -36,7 +36,7 @@ local UICorner_11 = Instance.new("UICorner")
 local UIGradient_8 = Instance.new("UIGradient")
 
 KerbalBABFTGui.Name = "KerbalBABFTGui"
-KerbalBABFTGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+KerbalBABFTGui.Parent = game.CoreGui
 KerbalBABFTGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 BABFTGui.Name = "BABFTGui"
@@ -380,7 +380,7 @@ local function TYZRNP_fake_script() -- SpoofWaterDetection.Spoofer
 	local script = Instance.new('LocalScript', SpoofWaterDetection)
 
 	script.Parent.MouseButton1Down:Connect(function()
-		game.Players.LocalPlayer.Character.WaterDetector.Disabled = true
+		game.Players.LocalPlayer.Character.WaterDetector.Parent = game.ReplicatedStorage
 	end)
 end
 coroutine.wrap(TYZRNP_fake_script)()
